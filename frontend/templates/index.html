@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAB AI Strategies - Entrepreneur Decision Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="logo">
+                <h1>MAB AI Strategies LLC</h1>
+                <p class="tagline">Entrepreneur Decision Game</p>
+            </div>
+
+            <div class="intro-text">
+                <p>Step into the future of your business. Make strategic decisions that will shape the destiny of MAB AI Strategies LLC.</p>
+                <p>Each choice matters. Every decision creates ripples through time.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="player-name">Your Name:</label>
+                <input type="text" id="player-name" placeholder="Enter your name" value="Entrepreneur">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="use-google-data">
+                    Extract data from Google services (Gmail, Drive, Sheets)
+                </label>
+                <small>Requires Google OAuth authentication</small>
+            </div>
+
+            <h2>Choose Your Difficulty</h2>
+            <div id="difficulty-selection" class="difficulty-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <button id="start-game-btn" class="btn btn-primary btn-large" disabled>
+                Start Your Journey
+            </button>
+
+            <div id="loading-message" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing company data and building timeline...</p>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="company-info">
+                    <h2 id="company-name">MAB AI Strategies LLC</h2>
+                    <p id="current-date" class="date"></p>
+                </div>
+                <div class="game-stats">
+                    <div class="stat">
+                        <label>Decision</label>
+                        <span id="decision-number">1</span> / <span id="total-decisions">14</span>
+                    </div>
+                    <div class="stat">
+                        <label>Impact Score</label>
+                        <span id="cumulative-impact">0.0</span>
+                    </div>
+                    <div class="stat">
+                        <label>Progress</label>
+                        <span id="progress-pct">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <div id="decision-container" class="decision-container">
+                <!-- Decision content populated by JavaScript -->
+            </div>
+
+            <div id="outcome-container" class="outcome-container hidden">
+                <!-- Outcome content populated by JavaScript -->
+            </div>
+
+            <div class="game-actions">
+                <button id="submit-answer-btn" class="btn btn-primary btn-large">
+                    Submit Decision
+                </button>
+                <button id="next-decision-btn" class="btn btn-primary btn-large hidden">
+                    Continue
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-header">
+                <h1>Your Journey Complete</h1>
+                <div id="final-grade" class="final-grade"></div>
+            </div>
+
+            <div id="results-content" class="results-content">
+                <!-- Results populated by JavaScript -->
+            </div>
+
+            <div class="results-actions">
+                <button id="play-again-btn" class="btn btn-primary btn-large">
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

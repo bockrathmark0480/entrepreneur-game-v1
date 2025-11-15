@@ -1,0 +1,16 @@
+flask==3.0.0
+flask-cors==4.0.0
+python-dotenv==1.0.0
+google-auth==2.25.2
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.110.0
+anthropic==0.40.0
+openai==1.51.0
+requests==2.31.0
+numpy==1.26.3
+pandas==2.1.4
+langchain==0.1.0
+langchain-anthropic==0.1.0
+python-dateutil==2.8.2
+pydantic==2.5.3
