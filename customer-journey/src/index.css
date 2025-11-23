@@ -1,0 +1,244 @@
+/**
+ * Main CSS file with Tailwind directives and custom styles
+ */
+
+/* Import Google Fonts for fantasy theme - must come before @tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base layer customizations */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-ink-500 bg-ink-700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-parchment-300;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-500/60;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-500;
+  }
+
+  /* Focus visible styling for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-400 ring-offset-2 ring-offset-parchment-200;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-gold-400/40 text-ink-600;
+  }
+}
+
+/* Component layer customizations */
+@layer components {
+  /* Custom range input styling */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #D4AF37, #B8942D);
+    cursor: pointer;
+    border: 2px solid #F6E7C1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #D4AF37, #B8942D);
+    cursor: pointer;
+    border: 2px solid #F6E7C1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  /* Parchment page styling */
+  .parchment-page {
+    background: linear-gradient(
+      135deg,
+      theme('colors.parchment.200') 0%,
+      theme('colors.parchment.100') 50%,
+      theme('colors.parchment.200') 100%
+    );
+    position: relative;
+  }
+
+  .parchment-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  /* Gold button styling */
+  .btn-gold {
+    @apply px-6 py-3 bg-gradient-to-b from-gold-400 to-gold-600 text-ink-600 font-serif font-semibold rounded-lg shadow-md transition-all duration-300;
+    @apply hover:from-gold-300 hover:to-gold-500 hover:shadow-glow-gold;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-md;
+  }
+
+  /* Parchment button styling */
+  .btn-parchment {
+    @apply px-6 py-3 bg-parchment-400 text-ink-500 font-serif rounded-lg transition-colors;
+    @apply hover:bg-parchment-500;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
+  }
+
+  /* Card styling */
+  .card {
+    @apply bg-parchment-100 rounded-lg border border-gold-400/20 p-4 md:p-6;
+  }
+
+  .card-highlight {
+    @apply bg-parchment-100 rounded-lg border-2 border-gold-500 p-4 md:p-6 shadow-glow-gold;
+  }
+}
+
+/* Utility layer customizations */
+@layer utilities {
+  /* Text shadow for titles */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+
+  /* Gradient text */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400;
+  }
+
+  /* Backdrop effects */
+  .backdrop-blur-parchment {
+    @apply backdrop-blur-md bg-parchment-200/80;
+  }
+
+  /* Animation delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    theme('colors.gold.400') 0%,
+    theme('colors.gold.200') 50%,
+    theme('colors.gold.400') 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Page turn 3D effect support */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
