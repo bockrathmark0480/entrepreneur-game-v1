@@ -1,8 +1,8 @@
 /**
- * Automation Journey Configuration
+ * Automation Journey Configuration - Schlosser & Associates
  *
  * This is the SINGLE source of truth for all journey content.
- * Modify this file to customize chapters, pricing, packages, and ROI calculations.
+ * Customized for Schlosser & Associates contractor automation workflows.
  *
  * @see README.md for detailed customization instructions
  */
@@ -14,7 +14,7 @@ export const automationJourneyConfig: AutomationJourneyConfig = {
   // BRAND CONFIGURATION
   // ============================================================================
   brand: {
-    companyName: "MAB AI Strategies LLC",
+    companyName: "Schlosser & Associates",
     logoUrl: "/assets/icons/logo.svg",
     colorScheme: {
       parchment: "#F6E7C1",
@@ -32,128 +32,242 @@ export const automationJourneyConfig: AutomationJourneyConfig = {
 
   // ============================================================================
   // CHAPTERS (AUTOMATIONS)
-  // Each chapter represents a distinct AI/automation workflow
+  // Schlosser & Associates Contractor Automation Workflows
   // ============================================================================
   chapters: [
+    // -------------------------------------------------------------------------
+    // PART 1: THE CAPTURE - Automating Estimating & Proposals
+    // -------------------------------------------------------------------------
     {
       id: "chapter-1",
-      title: "Chapter I: The Gateway of Automated Inquiries",
-      summaryOneLiner: "Intelligent lead capture and qualification that works while you rest.",
+      title: "Chapter I: The Capture",
+      summaryOneLiner: "Transform site visits into professional proposals in minutes with AI-powered estimating.",
       diagram: {
         type: "svg",
-        src: "/assets/diagrams/chapter-1.svg",
+        src: "/assets/diagrams/the-capture.svg",
       },
       hoverInfo: [
-        "Automatically captures leads from web forms, email, and social channels",
-        "AI qualifies prospects based on your ideal customer profile",
-        "Routes high-value leads to your team instantly",
+        "Mobile-friendly web form captures site photos, voice notes, and material lists",
+        "AI Processing Engine analyzes inputs and queries SupplyHouse & Ferguson APIs for real-time pricing",
+        "Pricing Logic Engine calculates totals with $119/hr labor rate and 30% material markup",
+        "PDF Generator creates professional proposals with DocuSign integration",
+        "Customers receive and sign proposals digitally - no paper needed",
       ],
-      tools: ["Zapier", "OpenAI API", "Google Sheets", "Slack", "CRM Webhook"],
+      tools: [
+        "Mobile Web Form",
+        "AI Processing Engine",
+        "SupplyHouse API",
+        "Ferguson API",
+        "Pricing Logic Engine",
+        "PDF Generator",
+        "DocuSign Integration",
+      ],
       pricing: {
-        costUSD: 2500,
-        implHours: 8,
+        costUSD: 8500,
+        implHours: 24,
       },
       savings: {
-        hoursPerWeek: 6,
-        dollarsPerYear: 15600,
+        hoursPerWeek: 12,
+        dollarsPerYear: 62400,
       },
-      mapPosition: { x: 15, y: 25 },
+      mapPosition: { x: 12, y: 25 },
     },
+
+    // -------------------------------------------------------------------------
+    // PART 2: THE BRIDGE - Automating Dispatch & Work Orders
+    // -------------------------------------------------------------------------
     {
       id: "chapter-2",
-      title: "Chapter II: The Scribe's Eternal Quill",
-      summaryOneLiner: "AI-powered document generation that drafts proposals, contracts, and reports.",
+      title: "Chapter II: The Bridge",
+      summaryOneLiner: "Signed proposals automatically create work orders and dispatch technicians instantly.",
       diagram: {
         type: "svg",
-        src: "/assets/diagrams/chapter-2.svg",
+        src: "/assets/diagrams/the-bridge.svg",
       },
       hoverInfo: [
-        "Generates customized proposals based on client requirements",
-        "Auto-populates contracts with verified data",
-        "Creates executive reports from raw data in seconds",
+        "Signed DocuSign proposal triggers the automation workflow",
+        "Webhook Listener parses customer info, scope of work, and parts list",
+        "AI Processing generates detailed tech notes for field crews",
+        "Sage 100 Contractor API creates new work orders automatically",
+        "Mobile App Sync pushes work orders directly to technician devices",
+        "Eliminates paper entirely - techs receive everything digitally",
       ],
-      tools: ["GPT-4", "Google Docs API", "PandaDoc", "Data Warehouse"],
-      pricing: {
-        costUSD: 3500,
-        implHours: 12,
-      },
-      savings: {
-        hoursPerWeek: 8,
-        dollarsPerYear: 20800,
-      },
-      mapPosition: { x: 35, y: 15 },
-    },
-    {
-      id: "chapter-3",
-      title: "Chapter III: The Sentinel's Watch",
-      summaryOneLiner: "24/7 customer support automation that never sleeps.",
-      diagram: {
-        type: "svg",
-        src: "/assets/diagrams/chapter-3.svg",
-      },
-      hoverInfo: [
-        "AI chatbot handles Tier 1 support inquiries automatically",
-        "Escalates complex issues to human agents with full context",
-        "Maintains consistent response quality around the clock",
+      tools: [
+        "DocuSign Webhooks",
+        "Data Parser",
+        "AI Tech Notes Generator",
+        "Sage 100 Contractor API",
+        "Sage 100 Database",
+        "Mobile App Sync",
+        "Technician Mobile App",
       ],
-      tools: ["Custom AI Agent", "Intercom", "Zendesk API", "Knowledge Base"],
       pricing: {
-        costUSD: 4500,
-        implHours: 16,
-      },
-      savings: {
-        hoursPerWeek: 15,
-        dollarsPerYear: 39000,
-      },
-      mapPosition: { x: 55, y: 30 },
-    },
-    {
-      id: "chapter-4",
-      title: "Chapter IV: The Oracle's Vision",
-      summaryOneLiner: "Predictive analytics that forecast trends before they emerge.",
-      diagram: {
-        type: "svg",
-        src: "/assets/diagrams/chapter-4.svg",
-      },
-      hoverInfo: [
-        "ML models predict customer churn 30+ days in advance",
-        "Forecasts inventory needs based on market signals",
-        "Identifies emerging opportunities in your data",
-      ],
-      tools: ["Python ML Pipeline", "BigQuery", "Tableau API", "Custom Models"],
-      pricing: {
-        costUSD: 6000,
-        implHours: 24,
+        costUSD: 7500,
+        implHours: 20,
       },
       savings: {
         hoursPerWeek: 10,
         dollarsPerYear: 52000,
       },
-      mapPosition: { x: 75, y: 20 },
+      mapPosition: { x: 32, y: 15 },
     },
+
+    // -------------------------------------------------------------------------
+    // PART 3: THE CLOSE - Automating Billing & Collections
+    // -------------------------------------------------------------------------
     {
-      id: "chapter-5",
-      title: "Chapter V: The Grand Orchestration",
-      summaryOneLiner: "End-to-end workflow automation connecting all your business processes.",
+      id: "chapter-3",
+      title: "Chapter III: The Close",
+      summaryOneLiner: "Job completion triggers automatic invoicing with intelligent collections follow-up.",
       diagram: {
         type: "svg",
-        src: "/assets/diagrams/chapter-5.svg",
+        src: "/assets/diagrams/the-close.svg",
       },
       hoverInfo: [
-        "Connects disparate systems into unified workflows",
-        "Triggers cascading actions across departments",
-        "Provides real-time visibility into process health",
+        "Tech marks job 'Complete' in mobile app with hours, parts, and photos",
+        "Data syncs to Sage 100 Contractor database automatically",
+        "Auto-Billing Bot generates invoices with PDF and payment links",
+        "Tiered Collections Logic handles payment tracking and follow-ups",
+        "Bills over $1,000 unpaid alert Taylor for personal follow-up call",
+        "Smaller unpaid bills trigger auto-email reminders after 3 days",
       ],
-      tools: ["n8n", "Custom Orchestrator", "Multi-API Integration", "Monitoring"],
+      tools: [
+        "Mobile Completion Tracking",
+        "Sage 100 Data Sync",
+        "Auto-Billing Bot",
+        "PDF Invoice Generator",
+        "Payment Link Integration",
+        "Tiered Collections Logic",
+        "Auto-Email Reminders",
+        "Alert System",
+      ],
       pricing: {
-        costUSD: 8000,
-        implHours: 32,
+        costUSD: 6500,
+        implHours: 18,
       },
       savings: {
-        hoursPerWeek: 20,
-        dollarsPerYear: 78000,
+        hoursPerWeek: 8,
+        dollarsPerYear: 41600,
       },
-      mapPosition: { x: 85, y: 45 },
+      mapPosition: { x: 52, y: 30 },
+    },
+
+    // -------------------------------------------------------------------------
+    // NEW FEATURE 1: COMMAND CENTER DASHBOARD
+    // -------------------------------------------------------------------------
+    {
+      id: "chapter-4",
+      title: "Chapter IV: The Command Center",
+      summaryOneLiner: "Real-time visibility into every job, tech, and dollar across your operation.",
+      diagram: {
+        type: "svg",
+        src: "/assets/diagrams/command-center.svg",
+      },
+      hoverInfo: [
+        "Live dashboard showing all active jobs, technician locations, and status",
+        "Real-time revenue tracking with daily, weekly, and monthly views",
+        "Technician performance metrics: jobs completed, revenue generated, customer ratings",
+        "Automated alerts for jobs running over estimate or behind schedule",
+        "Inventory tracking with low-stock warnings and auto-reorder suggestions",
+        "Custom KPI widgets you can configure for your business priorities",
+      ],
+      tools: [
+        "Real-Time Data Engine",
+        "Custom Dashboard Builder",
+        "GPS Tracking Integration",
+        "Performance Analytics",
+        "Inventory Management",
+        "Alert & Notification System",
+        "Mobile Dashboard App",
+      ],
+      pricing: {
+        costUSD: 5500,
+        implHours: 16,
+      },
+      savings: {
+        hoursPerWeek: 6,
+        dollarsPerYear: 31200,
+      },
+      mapPosition: { x: 72, y: 18 },
+    },
+
+    // -------------------------------------------------------------------------
+    // NEW FEATURE 2: AI INSIGHTS ENGINE
+    // -------------------------------------------------------------------------
+    {
+      id: "chapter-5",
+      title: "Chapter V: The Oracle's Lens",
+      summaryOneLiner: "AI analyzes your data to predict problems and surface opportunities before you see them.",
+      diagram: {
+        type: "svg",
+        src: "/assets/diagrams/ai-insights.svg",
+      },
+      hoverInfo: [
+        "Predictive job costing: AI learns from past jobs to improve estimate accuracy",
+        "Customer churn prediction: identifies at-risk accounts 30+ days early",
+        "Seasonal demand forecasting: plan staffing and inventory ahead of busy periods",
+        "Profitability analysis: surfaces which job types, customers, and techs drive margin",
+        "Smart scheduling suggestions: optimize routes and reduce windshield time",
+        "Weekly AI-generated insights report delivered to your inbox",
+      ],
+      tools: [
+        "Machine Learning Pipeline",
+        "Predictive Analytics Engine",
+        "Historical Data Analyzer",
+        "Route Optimization AI",
+        "Demand Forecasting",
+        "Automated Insights Reports",
+        "Natural Language Summaries",
+      ],
+      pricing: {
+        costUSD: 9000,
+        implHours: 28,
+      },
+      savings: {
+        hoursPerWeek: 8,
+        dollarsPerYear: 75000,
+      },
+      mapPosition: { x: 85, y: 35 },
+    },
+
+    // -------------------------------------------------------------------------
+    // NEW FEATURE 3: CUSTOMER PORTAL
+    // -------------------------------------------------------------------------
+    {
+      id: "chapter-6",
+      title: "Chapter VI: The Customer Gateway",
+      summaryOneLiner: "A branded self-service portal where customers view proposals, pay invoices, and track jobs.",
+      diagram: {
+        type: "svg",
+        src: "/assets/diagrams/customer-portal.svg",
+      },
+      hoverInfo: [
+        "Branded customer portal with your logo and colors",
+        "Customers view and e-sign proposals without creating accounts",
+        "Real-time job tracking: customers see technician ETA and progress",
+        "Online invoice payment with credit card, ACH, and financing options",
+        "Service history and document archive for each property",
+        "Automated appointment reminders and satisfaction surveys",
+        "Reduces inbound 'where's my tech?' calls by 60%+",
+      ],
+      tools: [
+        "White-Label Portal Builder",
+        "Secure Customer Authentication",
+        "Real-Time Job Tracking",
+        "Payment Processing (Stripe/Square)",
+        "Document Management",
+        "Automated Communications",
+        "Survey & Review Collection",
+      ],
+      pricing: {
+        costUSD: 7000,
+        implHours: 22,
+      },
+      savings: {
+        hoursPerWeek: 10,
+        dollarsPerYear: 52000,
+      },
+      mapPosition: { x: 65, y: 55 },
     },
   ],
 
@@ -163,34 +277,36 @@ export const automationJourneyConfig: AutomationJourneyConfig = {
   roi: {
     assumptions: {
       workWeeksPerYear: "50 weeks (accounting for holidays)",
-      hourlyCalculation: "Based on fully-loaded employee cost",
-      adoptionRamp: "70% adoption assumed in Year 1, scaling to 90%+ by Year 3",
-      maintenanceCost: "Annual maintenance estimated at 15% of implementation cost",
+      hourlyCalculation: "Based on fully-loaded employee cost including benefits",
+      laborRate: "Field labor calculated at $119/hr billing rate",
+      adoptionRamp: "70% adoption assumed in Year 1, scaling to 95%+ by Year 3",
+      maintenanceCost: "Annual maintenance estimated at 12% of implementation cost",
+      collectionImprovement: "Automated collections typically improve DSO by 15-25 days",
     },
     sliders: [
       {
         id: "avgHourlyCost",
-        label: "Average hourly cost ($)",
-        min: 20,
-        max: 200,
+        label: "Office staff hourly cost ($)",
+        min: 25,
+        max: 150,
         step: 5,
-        default: 65,
+        default: 55,
       },
       {
         id: "hoursSavedPerWeek",
         label: "Estimated hours saved per week",
-        min: 1,
-        max: 100,
+        min: 5,
+        max: 80,
         step: 1,
-        default: 20,
+        default: 35,
       },
       {
         id: "automationUptakeRate",
         label: "Automation adoption rate (%)",
-        min: 10,
+        min: 50,
         max: 100,
         step: 5,
-        default: 70,
+        default: 75,
       },
     ],
   },
@@ -201,41 +317,51 @@ export const automationJourneyConfig: AutomationJourneyConfig = {
   packages: [
     {
       tier: "Core",
-      includedChapterIds: ["chapter-1", "chapter-2"],
-      priceUSD: 5500,
-      description: "Essential automations to modernize your lead capture and document workflows.",
+      includedChapterIds: ["chapter-1", "chapter-2", "chapter-3"],
+      priceUSD: 19500,
+      description: "The complete Capture → Bridge → Close workflow. Automate from estimate to payment.",
       features: [
-        "Lead capture & qualification automation",
-        "AI document generation",
-        "Basic integration support",
-        "30-day implementation",
-        "Email support",
+        "AI-powered estimating & proposals",
+        "Automated dispatch & work orders",
+        "Auto-billing & smart collections",
+        "Sage 100 Contractor integration",
+        "DocuSign e-signatures",
+        "Mobile app for technicians",
+        "60-day implementation",
+        "Training for office & field staff",
+        "Email & phone support",
       ],
     },
     {
       tier: "Growth",
-      includedChapterIds: ["chapter-1", "chapter-2", "chapter-3"],
-      priceUSD: 9500,
-      description: "Expand your automation footprint with 24/7 customer support capabilities.",
+      includedChapterIds: ["chapter-1", "chapter-2", "chapter-3", "chapter-4", "chapter-6"],
+      priceUSD: 29000,
+      description: "Core workflow plus real-time visibility and customer self-service.",
       features: [
         "Everything in Core",
-        "AI-powered support automation",
-        "Multi-channel integration",
-        "45-day implementation",
+        "Command Center dashboard",
+        "Real-time job & tech tracking",
+        "Branded customer portal",
+        "Online payments (CC, ACH, financing)",
+        "Performance analytics",
+        "75-day implementation",
         "Priority support",
         "Monthly optimization reviews",
       ],
     },
     {
       tier: "Scale",
-      includedChapterIds: ["chapter-1", "chapter-2", "chapter-3", "chapter-4", "chapter-5"],
-      priceUSD: 22000,
-      description: "Complete enterprise transformation with predictive analytics and full orchestration.",
+      includedChapterIds: ["chapter-1", "chapter-2", "chapter-3", "chapter-4", "chapter-5", "chapter-6"],
+      priceUSD: 42000,
+      description: "Full automation suite with AI-powered insights for data-driven growth.",
       features: [
         "Everything in Growth",
-        "Predictive analytics suite",
-        "Full workflow orchestration",
-        "Custom ML models",
+        "AI Insights Engine",
+        "Predictive job costing",
+        "Demand forecasting",
+        "Customer churn prediction",
+        "Route optimization AI",
+        "Weekly AI insights reports",
         "90-day implementation",
         "Dedicated success manager",
         "Quarterly strategy sessions",

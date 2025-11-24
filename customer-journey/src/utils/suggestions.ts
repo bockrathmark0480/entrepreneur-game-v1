@@ -1,118 +1,149 @@
 /**
- * Suggestions Generator
+ * Suggestions Generator - Schlosser & Associates
  *
- * Placeholder functions that generate contextual suggestions for chapters
- * and value optimization. In production, these would call an AI service.
+ * Contextual suggestions for each automation chapter.
+ * In production, these would call an AI service for dynamic recommendations.
  */
 
 import type { Suggestion, Chapter } from '../types';
 
 /**
  * Generate suggestions relevant to a specific chapter
- * Placeholder implementation - returns static suggestions based on chapter context
+ * Customized for Schlosser & Associates contractor workflows
  *
  * @param chapter - The current chapter
  * @returns Array of 3 suggestions
  */
 export function getChapterSuggestions(chapter: Chapter): Suggestion[] {
   const baseSuggestions: Record<string, Suggestion[]> = {
+    // Chapter 1: The Capture - Estimating & Proposals
     'chapter-1': [
       {
         id: 'sug-1-1',
-        title: 'Multi-Channel Lead Scoring',
-        description: 'Enhance lead qualification with ML-based scoring across email, social, and web touchpoints.',
+        title: 'Photo AI Analysis',
+        description: 'Add AI that analyzes site photos to auto-detect equipment models, pipe sizes, and potential issues.',
         impact: 'high',
       },
       {
         id: 'sug-1-2',
-        title: 'CRM Deep Integration',
-        description: 'Sync qualified leads directly into your CRM with enriched contact data.',
-        impact: 'medium',
+        title: 'Voice-to-Estimate',
+        description: 'Enhance voice notes with AI transcription that auto-populates material lists from spoken descriptions.',
+        impact: 'high',
       },
       {
         id: 'sug-1-3',
-        title: 'Lead Nurturing Sequences',
-        description: 'Automatically enroll leads in personalized drip campaigns based on qualification score.',
+        title: 'Historical Pricing Intelligence',
+        description: 'Surface similar past jobs to validate estimates and improve accuracy over time.',
         impact: 'medium',
       },
     ],
+
+    // Chapter 2: The Bridge - Dispatch & Work Orders
     'chapter-2': [
       {
         id: 'sug-2-1',
-        title: 'Template Library Expansion',
-        description: 'Create 20+ document templates for common use cases with variable placeholders.',
+        title: 'Smart Tech Matching',
+        description: 'AI matches jobs to technicians based on skills, certifications, location, and current workload.',
         impact: 'high',
       },
       {
         id: 'sug-2-2',
-        title: 'Version Control Integration',
-        description: 'Track document revisions and maintain audit trail for compliance.',
+        title: 'Parts Pre-Staging',
+        description: 'Auto-generate pick lists and stage parts at warehouse before tech arrives.',
         impact: 'medium',
       },
       {
         id: 'sug-2-3',
-        title: 'E-Signature Workflow',
-        description: 'Route generated documents through automated e-signature collection.',
+        title: 'Customer ETA Notifications',
+        description: 'Send automated "tech on the way" texts with real-time arrival estimates.',
         impact: 'high',
       },
     ],
+
+    // Chapter 3: The Close - Billing & Collections
     'chapter-3': [
       {
         id: 'sug-3-1',
-        title: 'Sentiment Analysis',
-        description: 'Detect customer frustration early and escalate before issues compound.',
+        title: 'Payment Plan Automation',
+        description: 'Offer automated financing options for jobs over $2,500 to improve close rates.',
         impact: 'high',
       },
       {
         id: 'sug-3-2',
-        title: 'Knowledge Base Auto-Update',
-        description: 'AI learns from resolved tickets to improve future responses automatically.',
+        title: 'Review Request Automation',
+        description: 'Trigger Google/Yelp review requests after successful payment with high satisfaction scores.',
         impact: 'medium',
       },
       {
         id: 'sug-3-3',
-        title: 'Multi-Language Support',
-        description: 'Extend support automation to 10+ languages with real-time translation.',
+        title: 'Aging Report Alerts',
+        description: 'Weekly aging report with AI-prioritized follow-up recommendations based on payment history.',
         impact: 'medium',
       },
     ],
+
+    // Chapter 4: Command Center Dashboard
     'chapter-4': [
       {
         id: 'sug-4-1',
-        title: 'Custom Dashboard Builder',
-        description: 'Create executive dashboards that update in real-time with predictions.',
+        title: 'Technician Scorecards',
+        description: 'Add individual tech dashboards showing their metrics, earnings, and performance trends.',
         impact: 'high',
       },
       {
         id: 'sug-4-2',
-        title: 'Anomaly Detection Alerts',
-        description: 'Get notified immediately when metrics deviate from expected patterns.',
+        title: 'Job Profitability Alerts',
+        description: 'Real-time alerts when jobs exceed estimated hours or materials to catch overruns early.',
         impact: 'high',
       },
       {
         id: 'sug-4-3',
-        title: 'Competitor Intelligence',
-        description: 'Incorporate market signals and competitor data into forecasts.',
+        title: 'Dispatch Board Integration',
+        description: 'Add drag-and-drop dispatch board with tech availability and job assignments.',
         impact: 'medium',
       },
     ],
+
+    // Chapter 5: AI Insights Engine
     'chapter-5': [
       {
         id: 'sug-5-1',
-        title: 'Error Recovery Automation',
-        description: 'Implement self-healing workflows that auto-retry failed operations.',
+        title: 'Maintenance Agreement Predictions',
+        description: 'AI identifies customers likely to purchase service agreements based on job history.',
         impact: 'high',
       },
       {
         id: 'sug-5-2',
-        title: 'Process Mining Integration',
-        description: 'Discover bottlenecks and optimization opportunities from process logs.',
+        title: 'Warranty Claim Forecasting',
+        description: 'Predict which jobs may result in callbacks to proactively improve quality.',
         impact: 'medium',
       },
       {
         id: 'sug-5-3',
-        title: 'Real-Time Monitoring Dashboard',
-        description: 'Visual overview of all running workflows with performance metrics.',
+        title: 'Pricing Optimization',
+        description: 'AI suggests optimal pricing adjustments based on market conditions and win rates.',
+        impact: 'high',
+      },
+    ],
+
+    // Chapter 6: Customer Portal
+    'chapter-6': [
+      {
+        id: 'sug-6-1',
+        title: 'Equipment History Tracking',
+        description: 'Let customers view service history and warranty info for all equipment at their property.',
+        impact: 'medium',
+      },
+      {
+        id: 'sug-6-2',
+        title: 'Online Scheduling',
+        description: 'Allow customers to book appointments directly through the portal with available time slots.',
+        impact: 'high',
+      },
+      {
+        id: 'sug-6-3',
+        title: 'Referral Program Integration',
+        description: 'Built-in referral system where customers can share and earn credits for new business.',
         impact: 'high',
       },
     ],
@@ -142,7 +173,7 @@ export function getChapterSuggestions(chapter: Chapter): Suggestion[] {
 
 /**
  * Generate value/cost optimization suggestions for ROI page
- * Placeholder implementation - would call AI in production
+ * Customized for Schlosser & Associates
  *
  * @returns Array of 3 value optimization suggestions
  */
@@ -150,21 +181,21 @@ export function getValueOptimizationSuggestions(): Suggestion[] {
   return [
     {
       id: 'val-1',
-      title: 'Bundle Discount Opportunity',
-      description: 'Adding Chapter 3 (Support Automation) to your cart qualifies you for a 15% bundle discount.',
+      title: 'Start with Core Package',
+      description: 'The Capture → Bridge → Close workflow delivers the fastest ROI. Most contractors see payback in 4-6 months.',
       impact: 'high',
     },
     {
       id: 'val-2',
-      title: 'Phased Implementation',
-      description: 'Consider spreading implementation across 2 quarters to reduce initial cash outlay and validate ROI progressively.',
-      impact: 'medium',
+      title: 'Add Customer Portal for Collections',
+      description: 'Online payments typically reduce Days Sales Outstanding (DSO) by 15-25 days, improving cash flow significantly.',
+      impact: 'high',
     },
     {
       id: 'val-3',
-      title: 'Quick Win First',
-      description: 'Start with Chapter 1 (Lead Capture) for fastest time-to-value and proof of concept for stakeholders.',
-      impact: 'high',
+      title: 'Phase AI Insights for Year 2',
+      description: 'Start with Core or Growth, then add AI Insights once you have 6+ months of data for accurate predictions.',
+      impact: 'medium',
     },
   ];
 }
